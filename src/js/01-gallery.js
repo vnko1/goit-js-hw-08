@@ -1,8 +1,12 @@
-// Add imports above this line
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import galleryItems from './gallery-items';
-// Change code below this line
 
 const container = document.querySelector('.gallery');
+
+container.insertAdjacentHTML('beforeend', markingUp(galleryItems));
+
+new SimpleLightbox('.gallery a');
 
 function markingUp(gallery) {
   return gallery.reduce((acc, { preview, original, description }) => {
@@ -17,5 +21,3 @@ function markingUp(gallery) {
     return acc;
   }, '');
 }
-
-container.insertAdjacentHTML('beforeend', markingUp(galleryItems));

@@ -6,7 +6,10 @@ const textAreaEl = form.querySelector('textarea');
 
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
-const data = {};
+let data = {};
+if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+  data = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+}
 
 document.addEventListener('DOMContentLoaded', checkingLocaleStorage);
 form.addEventListener('input', throttle(localStorageUpdate, 500));

@@ -20,7 +20,7 @@ function localStorageUpdate({ target }) {
     data.message = target.value;
   }
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data));
-  console.log(localStorage);
+
 }
 
 function checkingLocaleStorage() {

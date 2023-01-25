@@ -38,7 +38,7 @@ function retrievingData(e) {
   const { email, message } = e.target.elements;
   data.email = email.value;
   data.message = message.value;
-  localStorage.clear();
   form.reset();
+  localStorage.removeItem(LOCALSTORAGE_KEY);
   console.log(data);
 }

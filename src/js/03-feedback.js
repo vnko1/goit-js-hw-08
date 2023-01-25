@@ -16,7 +16,6 @@ form.addEventListener('input', throttle(localStorageUpdate, 500));
 form.addEventListener('submit', retrievingData);
 
 function localStorageUpdate({ target }) {
-  console.log(target.name);
   data[target.name] = target.value;
   // if (target.getAttribute('type') === 'email') {
   //   data.email = target.value;

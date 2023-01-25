@@ -20,13 +20,14 @@ function localStorageUpdate({ target }) {
     data.message = target.value;
   }
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data));
-
 }
 
 function checkingLocaleStorage() {
-  const localStorageData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-  inputEl.value = localStorageData.email || '';
-  textAreaEl.value = localStorageData.message || '';
+  if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+    const localStorageData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+    inputEl.value = localStorageData.email || '';
+    textAreaEl.value = localStorageData.message || '';
+  }
 }
 
 function retrievingData(e) {

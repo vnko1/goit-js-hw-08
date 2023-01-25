@@ -16,12 +16,15 @@ form.addEventListener('input', throttle(localStorageUpdate, 500));
 form.addEventListener('submit', retrievingData);
 
 function localStorageUpdate({ target }) {
-  if (target.getAttribute('type') === 'email') {
-    data.email = target.value;
-  }
-  if (target.getAttribute('name') === 'message') {
-    data.message = target.value;
-  }
+  console.log(target.name);
+  data[target.name] = target.value;
+  // if (target.getAttribute('type') === 'email') {
+  //   data.email = target.value;
+  // }
+  // if (target.getAttribute('name') === 'message') {
+  //   data.message = target.value;
+  // }
+
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data));
 }
 
